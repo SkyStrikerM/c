@@ -1,0 +1,105 @@
+using UnityEngine;
+
+public class Condition_20260707 : MonoBehaviour
+{
+    private void Start()
+    {
+        // 과제 1
+        // 성적 처리기
+        // 내가 받은 성적이 있고, 거기에 따라서
+        // A,B,C,D,F 라는 성적을 메길 것임
+        // 성적은 0~100점 까지만 존재함
+        // 100(포함) ~ 95점 (미포함) 까지 A
+        // 90       ~ 95점         까지 B
+        // 85       ~90점          까지 C
+        // 80       ~85점          까지 D
+        // 그외 점수는 F
+
+        // 마지막 성적이 3의 배수인지 아닌지 출력 해보시오.
+
+        // 출력 예시 :
+        // 98점을 받은 학생의 점수는 A 입니다.
+        // 98은 3의 배수가 아닙니다.
+
+
+
+        // 풀이
+        // 1. 내가 받은 성적이 있음
+        // - 성적이라는 변수 하나 만들기
+
+        int score = 97;
+
+
+        // 2. 성적은 0~100점까지 존재함
+        // - 만약에, -1과 같은 음수나, 100점보다 큰 양수가 들어오면
+        // 성적처리기가 동작하면 안될듯
+
+        // 3. A,B,C,D,F 라는 등급을 메겨야 함
+        // - 등급에 대한 변수도 만들면 좋겠다
+        // - // 100(포함) ~ 95점 (미포함) 까지 A
+        // - 90       ~ 95점         까지 B
+        // - 85       ~90점          까지 C
+        // - 80       ~85점          까지 D
+        // - 그외 점수는 F
+
+        if (score <= 100 && score >= 0)
+        {
+            // 여기서 성적 처리 로직 작동하면 됨
+            char grade = ' ';
+            if (score <= 100 && score > 95)
+            {
+                grade = 'A';
+            }
+            else if (score <= 95 && score > 90)
+            {
+                grade = 'B';
+            }
+            else if (score <= 90 && score > 85)
+            {
+                grade = 'C';
+            }
+            else if (score <= 85 && score > 80)
+            {
+                grade = 'D';
+            }
+            else
+            {
+                grade = 'F';
+            }
+            
+            // 4. 성적이 3의 배수인지 판정
+            // - bool 형 변수에 3의 배수인지 아닌지 저장
+            // - 3의 배수 판명 필요
+            // - 3으로 나누었을 때, 나머지가 0인 수를 3의 배수라고 함
+            // - 나머지 연산 한 결과가 0이냐 아니냐로 구분하면 됨
+           
+            bool isMultiplesOfThree = false;
+            if (score % 3 == 0)
+            {
+                isMultiplesOfThree = true;
+            }
+            else
+            {
+                isMultiplesOfThree = false;
+            }
+
+            Debug.Log(score + "점을 받은 학생의 등급은" + grade + "입니다.");
+            
+            if (isMultiplesOfThree == true)
+            {
+                Debug.Log(score + "은 3의 배수 입니다.");
+            }
+            else
+            {
+                Debug.Log(score + "은 3의 배수가 아닙니다");
+            }
+        }
+        
+      
+        // 5. 연산한 결과 출력
+
+
+
+    }
+
+}
