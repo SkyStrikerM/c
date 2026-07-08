@@ -103,3 +103,53 @@ public class Condition_20260707 : MonoBehaviour
     }
 
 }
+
+최적화 시 코드
+  if (score <= 100 && score >= 0)
+  {
+      // 여기서 성적 처리 로직 작동하면 됨
+      char grade = ' ';
+      if (score > 95)
+      {
+          grade = 'A';
+      }
+      else if (score > 90)
+      {
+          grade = 'B';
+      }
+      else if (score > 85)
+      {
+          grade = 'C';
+      }
+      else if (score > 80)
+      {
+          grade = 'D';
+      }
+      else
+      {
+          grade = 'F';
+      }
+
+      // 4. 성적이 3의 배수인지 판정
+      // - bool 형 변수에 3의 배수인지 아닌지 저장
+      // - 3의 배수 판명 필요
+      // - 3으로 나누었을 때, 나머지가 0인 수를 3의 배수라고 함
+      // - 나머지 연산 한 결과가 0이냐 아니냐로 구분하면 됨
+
+
+      Debug.Log(score + "점을 받은 학생의 등급은" + grade + "입니다.");
+
+      if (score % 3 == 0)
+      {
+          Debug.Log(score + "은 3의 배수 입니다.");
+      }
+      else
+      {
+          Debug.Log(score + "은 3의 배수가 아닙니다");
+      }
+
+      
+      
+      
+  }
+        
